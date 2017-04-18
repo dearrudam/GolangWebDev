@@ -1,0 +1,18 @@
+<html>
+<body>
+<h1>Me page</h1>
+{{template "menu.gohtml"}}
+
+{{ if . }}
+{{ range $key, $value := .}}
+<p><strong>{{$key}}</strong></p>
+<ul>{{range $value}}<li><em>{{.}}</em></li>{{end}}</ul>
+{{end}}
+{{end}}
+
+<form action="/me/" method="POST">
+    <input type="text" name="username" placeholder="Insert your name here!"/>
+    <input type="submit"/>
+</form>
+</body>
+</html>
